@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>D-TEX TECHNOLOGY – Animated Logo</title>
+
+  <style>
+    body {
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Logo container */
+    .logo-wrapper {
+      position: relative;
+      width: 320px;
+      text-align: center;
+    }
+
+    /* Icon + orbit group */
+    .icon-box {
+      position: relative;
+      width: 200px;
+      margin: auto;
+    }
+
+    /* Main D icon */
+    .logo-main {
+      width: 100%;
+      animation:
+        slowRotate 14s linear infinite,
+        pulseGlow 3s ease-in-out infinite;
+    }
+
+    /* Orbit ring */
+    .orbit {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      animation: spinOrbit 4s linear infinite;
+      pointer-events: none;
+    }
+
+    /* Text */
+    .text-box {
+      margin-top: 15px;
+      overflow: hidden;
+    }
+
+    .dtex {
+      font-size: 36px;
+      font-weight: bold;
+      color: #e6e6e6;
+      letter-spacing: 2px;
+      animation: slideIn 1.5s ease-out forwards;
+    }
+
+    .technology {
+      font-size: 14px;
+      letter-spacing: 6px;
+      color: #9aa9b8;
+      margin-top: 6px;
+      opacity: 0;
+      animation: fadeIn 2s ease-in forwards;
+      animation-delay: 1.3s;
+    }
+
+    /* Animations */
+    @keyframes spinOrbit {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes slowRotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        filter: drop-shadow(0 0 6px #00aaff);
+      }
+      50% {
+        filter: drop-shadow(0 0 20px #00ccff);
+      }
+      100% {
+        filter: drop-shadow(0 0 6px #00aaff);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(120px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="logo-wrapper">
+    <div class="icon-box">
+      <!-- Replace with your transparent images -->
+      <img src="D_tex_logo.jpg" class="logo-main" alt="D-TEX Logo">
+      <img src="orbit.png" class="orbit" alt="Orbit Ring">
+    </div>
+
+    <div class="text-box">
+      <div class="dtex">D-TEX</div>
+      <div class="technology">TECHNOLOGY</div>
+    </div>
+  </div>
+
+</body>
+</html>
